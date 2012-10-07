@@ -29,3 +29,10 @@ This book covers 14 of the original 23 GoF design patterns.
    Don't implement features or design in flexibility that you don't immediately need because you will probably never need it.
 
 ----------------------------------------------------------------
+
+## Design Patterns
+
+1. TEMPLATE METHOD
+    1. Create a skeletal class with methods that are common between algorithms.
+    2. Create a subclass for each algorithm and override the common methods from the skeletal class.
+
