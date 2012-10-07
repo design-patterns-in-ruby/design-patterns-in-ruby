@@ -33,6 +33,15 @@ This book covers 14 of the original 23 GoF design patterns.
 ## Design Patterns
 
 1. TEMPLATE METHOD
-    1. Create a skeletal class with methods that are common between algorithms.
-    2. Create a subclass for each algorithm and override the common methods from the skeletal class.
+    1. Create a **skeletal class** with methods that are common between algorithms.
+    2. Create a **subclass** for each algorithm and override the common methods from the skeletal class.
+
+Disadvantages:
+    * no runtime flexibility
+    * two
+
+
+2. STRATEGY - Delegate tasks to encapsulated algorithms which are interchangable at runtime.
+	1. Define a family of objects which all do the same thing (ex: format output, generate graphics etc.).
+	2. Ensure the family of objects share the same interface so that they are interchangable.
 
