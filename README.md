@@ -43,9 +43,9 @@ Disadvantages:
 
 ### STRATEGY
 
-In the Strategy pattern we have an object (the **context**) that is trying to get something done. But to get that thing done, we need to supply the context with a second object (the **strategy**) that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
-
 The basic idea is to delegate tasks to encapsulated algorithms which are interchangable at runtime.
+
+In the Strategy pattern we have an object (the **context**) that is trying to get something done. But to get that thing done, we need to supply the context with a second object (the **strategy**) that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
 
 1. Define a family of objects which all do the same thing (ex: format output, generate graphics etc.).
 2. Ensure the family of objects share the same interface so that they are interchangable.
@@ -58,3 +58,38 @@ Advantages:
 
 * algorithms are interchangable at runtime
 * promotes modularity
+
+### OBSERVER
+
+The observer pattern is for event driven programming.
+
+An object, called the **subject**, maintains a list of its dependents, called **observers**, and notifies them automatically of any state changes, usually by calling one of their methods.
+
+The Ruby Standard Library includes an [Observable module](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/observer/rdoc/Observable.html) that implements this pattern.
+
+It's also possible to use code blocks as observers.  This isn't supported by the Observable module in the Ruby Standard Library, but it's easy to implement.
+
+There are a few additional concerns that should be addressed when working with the Observable pattern.
+
+#### Additional Concerns
+
+##### Push vs Pull
+In the default implementation, the notification sent to the observer doens't specify which of the Subjects attributes has changed.  To find out which attribute has changed, the Observer has to check the Subjects attributes, this is the *pull* method.
+
+Another approach would be the *push* method where the notification includes other attributes which provide the Observer with additional information like the examples below.
+
+    observer.update(self, :salary_changed)
+    observer.update(self, :salary_changed, old_salary, new_salary)
+
+
+An observer may only need to know when a specific attribute of the subject changes.  The simple implementation would notify the observer when any attribute changes.
+
+##### Atomic Event Notifications
+If multiple attributes of a Subject are being updated and the updates are not independent, notifying Observers before all the updates are executed could cause an inconsistent state.
+
+	fred = Employee.new('Fred', 'Crane Operator', 30000)	fred.salary = 1000000	# Warning! Inconsistent state here!	fred.title = 'Vice President of Sales'
+
+##### What to do When an Observer Raises an Exception 
+It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
+
+
