@@ -4,6 +4,7 @@ Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
 This book covers 14 of the original 23 GoF design patterns.
 
+
 ## Five Main Points
 
 1. Separate the things that change from the things that stay the same.
@@ -32,6 +33,7 @@ This book covers 14 of the original 23 GoF design patterns.
 
 ## Design Patterns
 
+
 ### TEMPLATE METHOD
 1. Create a **skeletal class** with methods that are common between algorithms.
 2. Create a **subclass** for each algorithm and override the common methods from the skeletal class.
@@ -58,6 +60,7 @@ Advantages:
 
 * algorithms are interchangable at runtime
 * promotes modularity
+
 
 ### OBSERVER
 
@@ -91,5 +94,11 @@ If multiple attributes of a Subject are being updated and the updates are not in
 
 ##### What to do When an Observer Raises an Exception 
 It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
+
+
+### COMPOSITE
+
+The composite deisgn pattern is a structural pattern used to represent objects that have a hierarchical tree structure.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
+
 
 
