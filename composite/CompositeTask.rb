@@ -21,7 +21,10 @@ class CompositeTask < Task
   end
 
   def []=(index, value)
+    replaced_value = @sub_tasks[index]
     @sub_tasks[index] = value
+    replaced_value.parent = nil
+    value.parent = self
   end
 
   def time_required

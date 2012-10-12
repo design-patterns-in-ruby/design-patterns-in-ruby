@@ -90,7 +90,10 @@ An observer may only need to know when a specific attribute of the subject chang
 ##### Atomic Event Notifications
 If multiple attributes of a Subject are being updated and the updates are not independent, notifying Observers before all the updates are executed could cause an inconsistent state.
 
-	fred = Employee.new('Fred', 'Crane Operator', 30000)	fred.salary = 1000000	# Warning! Inconsistent state here!	fred.title = 'Vice President of Sales'
+	fred = Employee.new('Fred', 'Crane Operator', 30000)
+	fred.salary = 1000000
+	# Warning! Inconsistent state here!
+	fred.title = 'Vice President of Sales'
 
 ##### What to do When an Observer Raises an Exception 
 It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
@@ -100,5 +103,7 @@ It's also important to address what should happen when a notification causes an 
 
 The composite deisgn pattern is a structural pattern used to represent objects that have a hierarchical tree structure.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
 
+The implementation in the book is inflexible and doesn't allow Tasks to be dynamically created and doesn't allow dynamically splitting tasks into subtasks.  To subdivide a task into multiple subtasks, the class of the leaf Task must be changed to a CompositeTask before children can be added.  A better solution would be to use a single Node class for both leaves and internal nodes.  With this implementation, leaf nodes can have children added without the need to change it's class.  
 
+For a specific implementation, you can simply inherit from the Node class and extend it with any additional functions you may need.
 

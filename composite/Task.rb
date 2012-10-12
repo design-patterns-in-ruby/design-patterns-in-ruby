@@ -7,6 +7,6 @@ class Task
   end
 
   def time_required
-    0.0
+    0
   end
 end
