@@ -33,7 +33,7 @@ This book covers 14 of the original 23 GoF design patterns.
 
 ## Design Patterns
 
-
+---
 ### TEMPLATE METHOD
 1. Create a **skeletal class** with methods that are common between algorithms.
 2. Create a **subclass** for each algorithm and override the common methods from the skeletal class.
@@ -42,7 +42,7 @@ Disadvantages:
 
   * no runtime flexibility
 
-
+---
 ### STRATEGY
 
 The basic idea is to delegate tasks to encapsulated algorithms which are interchangable at runtime.
@@ -61,7 +61,7 @@ Advantages:
 * algorithms are interchangable at runtime
 * promotes modularity
 
-
+---
 ### OBSERVER
 
 The observer pattern is for event driven programming.
@@ -98,7 +98,7 @@ If multiple attributes of a Subject are being updated and the updates are not in
 ##### What to do When an Observer Raises an Exception 
 It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
 
-
+---
 ### COMPOSITE
 
 The composite deisgn pattern is a structural pattern used to represent objects that have a hierarchical tree structure.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
@@ -106,4 +106,38 @@ The composite deisgn pattern is a structural pattern used to represent objects t
 The implementation in the book is inflexible and doesn't allow Tasks to be dynamically created and doesn't allow dynamically splitting tasks into subtasks.  To subdivide a task into multiple subtasks, the class of the leaf Task must be changed to a CompositeTask before children can be added.  A better solution would be to use a single Node class for both leaves and internal nodes.  With this implementation, leaf nodes can have children added without the need to change it's class.  
 
 For a specific implementation, you can simply inherit from the Node class and extend it with any additional functions you may need.
+
+---
+### ITERATOR
+
+The iterator design pattern provides sequential access to elements within a container without exposing how the container actually represents the elements.  The iterator can be thought of as a moveable pointer that allows access to elements encapsulated within a container.
+
+#### external iterator
+The iteration logic is contained in a seperate class.  The iteration class can be generalized to handle multiple object types as long as they allow indexing.
+
+External iterator require the additional class to do the actual iterating, but they do allow for greater flexibility because you can control the iteration, which elements are iterated over and in what order.
+
+#### internal iterator
+All the iterating logic occurs inside the aggregate object.
+Use a code block to pass your logic into the aggregate which then calls the block for each of it's elements.
+
+    colors = ['red', 'green', 'blue']
+    colors.each { |color|
+    	puts color
+    }
+
+#### Enumerable Module
+
+Ruby includes an [Enumerator module](http://ruby-doc.org/core-1.9.3/Enumerable.html)
+
+> The Enumerable mixin provides collection classes with several traversal and searching methods, and with the ability to sort. The class must provide a method each, which yields successive members of the collection. If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful <=> operator, as these methods rely on an ordering between members of the collection.
+
+With custom iterator implementations, if the original collection class changes while you're iterating through it's elements, it can create unexpected results.  To remedy this, you can have the iterator operate on a copy of the oringal collection.
+
+    class ArrayIterator
+      def initialize(array)
+	  	@array = Array.new(array)
+      	@index = 0
+	  end
+	 … 
 
