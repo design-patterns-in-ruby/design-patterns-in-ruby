@@ -11,3 +11,6 @@ cmds.add_command DeleteFile.new('file1.txt')
 
 puts cmds.description
 cmds.execute
+
+sleep 1.5
+cmds.unexecute

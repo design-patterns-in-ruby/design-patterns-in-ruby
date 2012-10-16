@@ -2,7 +2,7 @@ require 'FileUtils'
 
 class CreateFile < Command
   def initialize(path, contents)
-    super("Create file: #{path}")
+    super "Create file: #{path}" 
     @path = path
     @contents = contents
   end
@@ -11,5 +11,9 @@ class CreateFile < Command
     f = File.open(@path, 'w')
     f.write @contents
     f.close
+  end
+
+  def unexecute
+    File.delete(@path)
   end
 end
