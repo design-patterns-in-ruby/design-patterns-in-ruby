@@ -45,14 +45,14 @@ Disadvantages:
 ---
 ### STRATEGY
 
-The basic idea is to delegate tasks to encapsulated algorithms which are interchangable at runtime.
+The basic idea is to **delegate tasks to encapsulated algorithms which are interchangable at runtime**.
 
-In the Strategy pattern we have an object (the **context**) that is trying to get something done. But to get that thing done, we need to supply the context with a second object (the **strategy**) that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
+In the Strategy pattern we have an object (the *context*) that is trying to get something done. But to get that thing done, we need to supply the context with a second object (the *strategy*) that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
 
 1. Define a family of objects which all do the same thing (ex: format output, generate graphics etc.).
 2. Ensure the family of objects share the same interface so that they are interchangable.
 
-There are two strategies to passing data from the **context** object to the **strategy** object.  We can pass the data as paramaters when the strategy is called, or we can pass the context object as the single parameter.
+There are two strategies to passing data from the *context* object to the *strategy* object.  We can pass the data as paramaters when the strategy is called, or we can pass the context object as the single parameter.
 
 If the strategies are very simple and havee only one method, we can even use code blocks for our algorithms and simply use `block.call`.  However, if multiple methods are needed, the strategies must be structured as seperate classes.
 
@@ -64,7 +64,7 @@ Advantages:
 ---
 ### OBSERVER
 
-The observer pattern is for event driven programming.
+The observer pattern is for **event driven programming**.
 
 An object, called the **subject**, maintains a list of its dependents, called **observers**, and notifies them automatically of any state changes, usually by calling one of their methods.
 
@@ -72,9 +72,8 @@ The Ruby Standard Library includes an [Observable module](http://www.ruby-doc.or
 
 It's also possible to use code blocks as observers.  This isn't supported by the Observable module in the Ruby Standard Library, but it's easy to implement.
 
-There are a few additional concerns that should be addressed when working with the Observable pattern.
-
 #### Additional Concerns
+There are a few additional concerns that should be addressed when working with the Observable pattern.
 
 ##### Push vs Pull
 In the default implementation, the notification sent to the observer doens't specify which of the Subjects attributes has changed.  To find out which attribute has changed, the Observer has to check the Subjects attributes, this is the *pull* method.
@@ -101,7 +100,7 @@ It's also important to address what should happen when a notification causes an 
 ---
 ### COMPOSITE
 
-The composite deisgn pattern is a structural pattern used to represent objects that have a hierarchical tree structure.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
+The composite deisgn pattern is a structural pattern used to represent objects that have a **hierarchical tree structure**.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
 
 The implementation in the book is inflexible and doesn't allow Tasks to be dynamically created and doesn't allow dynamically splitting tasks into subtasks.  To subdivide a task into multiple subtasks, the class of the leaf Task must be changed to a CompositeTask before children can be added.  A better solution would be to use a single Node class for both leaves and internal nodes.  With this implementation, leaf nodes can have children added without the need to change it's class.  
 
@@ -146,19 +145,32 @@ With custom iterator implementations, if the original collection class changes w
 
 The command pattern is a behavior design pattern used to store the information necessary to call methods at a future time.
 
-#### GUI Example
+#### Uses
+
+##### GUI Elements
 For many GUIs, you may have a generic button class that you want to use in many different situations.  In each situation, the button may need to do different things.  One appraoch would be to create a subclass for each button your interface requires, however this would lead to a excessive number of button classes.  A better approach would be to create seperate classes for the code executed when the button is clicked.  This action class can then be passed to the button telling it what the button should do when clicked.
 
-Seperate the thing that changes, in this case the action, from the part that stays the same, the generic button object.  One advantage of this approach is that since the action is passed to the button, it can be changed at runtime.
+**Seperate the thing that changes, in this case the action, from the part that stays the same, the generic button object**.  One advantage of this approach is that since the action is passed to the button, it can be changed at runtime.
 
 The command is merely a set of actions wrapped in an object.  With ruby, we can use Procs to do the same thing without the need to create a seperate object.  This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option.
 
-#### Macro Recording
+##### Macro Recording
 Many modern applications have the ability to undo actions, including word processors, spreadsheets and databases.  This undo feature can be implemented by using the command design pattern by keeping track what code is executed.
 
 Another great example of macro recording using the command design pattern is the handling of migrations in Ruby on Rails.
 
 To undo actions we need to store some state information, so we must use a command class rather than a simple Proc.
+
+##### Queing Commands
+Commands allow us to queue commands making applications more convenient for the user and for the system.
+
+###### Installation Wizards
+When installing applications, many will prompt the user with a number of installation options before starting the actual installations.  The user's choices determines which method calls are added to the installer's to-do list.  Without commands, the installation would have to stop periodically to query the user for their preferences.
+
+###### Fixed Overhead
+In some situations there is a fixed overhead to executing a certain type of command.  Queing up multiple commands and executing them together reduces the number of times we have to run the overhead code.  Database operations are an example of this.  If there isn't a persistent database connection, we have to create one each time we run database operations.  Since there is a cost to connecting to the database, a good approach may be to queue up the database operations and execute them in a batch.  The same logic holds for web applications when you need to make API calls to external applications.
+
+
 
 
 
