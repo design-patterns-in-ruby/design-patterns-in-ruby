@@ -33,7 +33,7 @@ This book covers 14 of the original 23 GoF design patterns.
 
 ## Design Patterns
 
----
+
 ### TEMPLATE METHOD
 1. Create a **skeletal class** with methods that are common between algorithms.
 2. Create a **subclass** for each algorithm and override the common methods from the skeletal class.
@@ -140,4 +140,25 @@ With custom iterator implementations, if the original collection class changes w
       	@index = 0
 	  end
 	 … 
+
+---
+### COMMANDS
+
+The command pattern is a behavior design pattern used to store the information necessary to call methods at a future time.
+
+#### GUI Example
+For many GUIs, you may have a generic button class that you want to use in many different situations.  In each situation, the button may need to do different things.  One appraoch would be to create a subclass for each button your interface requires, however this would lead to a excessive number of button classes.  A better approach would be to create seperate classes for the code executed when the button is clicked.  This action class can then be passed to the button telling it what the button should do when clicked.
+
+Seperate the thing that changes, in this case the action, from the part that stays the same, the generic button object.  One advantage of this approach is that since the action is passed to the button, it can be changed at runtime.
+
+The command is merely a set of actions wrapped in an object.  With ruby, we can use Procs to do the same thing without the need to create a seperate object.  This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option.
+
+#### Macro Recording
+Many modern applications have the ability to undo actions, including word processors, spreadsheets and databases.  This undo feature can be implemented by using the command design pattern by keeping track what code is executed.
+
+Another great example of macro recording using the command design pattern is the handling of migrations in Ruby on Rails.
+
+To undo actions we need to store some state information, so we must use a command class rather than a simple Proc.
+
+
 
