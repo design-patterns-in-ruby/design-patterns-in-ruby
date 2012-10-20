@@ -170,7 +170,23 @@ When installing applications, many will prompt the user with a number of install
 ###### Fixed Overhead
 In some situations there is a fixed overhead to executing a certain type of command.  Queing up multiple commands and executing them together reduces the number of times we have to run the overhead code.  Database operations are an example of this.  If there isn't a persistent database connection, we have to create one each time we run database operations.  Since there is a cost to connecting to the database, a good approach may be to queue up the database operations and execute them in a batch.  The same logic holds for web applications when you need to make API calls to external applications.
 
+---
+### ADAPTER
 
+> Convert the interface of a class into another interface clients expect. An adapter lets classes work together that could not otherwise because of incompatible interfaces.
+ 
+http://en.wikipedia.org/wiki/Design_pattern_(computer_science)
+
+Ruby allows for classes to be modified at runtime.  Consequently, rather than create an adapter to modify a classes API, we can simply modify the class at runtime to add or alter methods.
+
+Alternatively, Ruby also allows the runtime modification of individual instances.  This provides a more 
+
+Modifying instances or classes at run-time is advisable only when:
+
+* The modifications are simple
+* You understand the class you're modifying well and are sure your changes wont break things.
+
+If either of these points aren't true, it's probably better to create a seperate adapter.
 
 
 
