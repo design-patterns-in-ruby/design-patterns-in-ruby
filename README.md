@@ -12,11 +12,11 @@ This book covers 14 of the original 23 GoF design patterns.
 * [Commands](#commands)
 * [Adapter](#adapter)
 * [Proxy](#proxy)
-* Decorator <!--* [Interpreter](#interpreter)-->
-* Singleton <!--* [Singleton](#singleton)-->
-* Factory <!--* [Factory](#factory)-->
-* Builder <!--* [Builder](#builder)-->
-* Interpreter <!--* [Decorator](#decorator)-->
+* Decorator <!-- [Interpreter](#interpreter)-->
+* Singleton <!-- [Singleton](#singleton)-->
+* Factory <!-- [Factory](#factory)-->
+* Builder <!-- [Builder](#builder)-->
+* Interpreter <!-- [Decorator](#decorator)-->
 
 
 ## Five Main Points
