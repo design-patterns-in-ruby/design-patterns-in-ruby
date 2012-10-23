@@ -188,5 +188,31 @@ Modifying instances or classes at run-time is advisable only when:
 
 If either of these points aren't true, it's probably better to create a seperate adapter.
 
+---
+### PROXY
 
+#### Types of Proxies
+
+##### Protection Proxy
+A protection proxy protects an object from unauthorized access.  To ensure methods can only be run by authorized users, we can run an authorization check before messages are passed to the underlying object.
+
+##### Remote Proxy
+Remote proxies provides access to objects which are running on remote machines.
+
+A great example of a remote proxy is [Distributed Ruby (DRb)](http://segment7.net/projects/ruby/drb/introduction.html), which allows Ruby programs to communicate over a network. With DRb, the client machines runs a proxy which handles all of the network communications behind the scenes.
+
+##### Virtual Proxy
+Virtual proxies allow us to delay the creation of an object until it is absolutely necessary.  This is useful when creating the object is computationaly expensive.
+
+#### Using Message Passing to Simplify Proxies
+When building a proxy, we could implement a method for each method in the underlying object.  However, this leads to a lot of repeated code and tightly couples the proxy with the underlying object.  A better alternative is to pass method calls direcly to the underlying object.  Ruby includes a method that is perfect for this situation called *method_missing*.
+
+In Ruby, when you call a method on an object, Ruby looks for the method in the initial object and it's modules and then works it's way up the stack to that objects superclass and then it's superclass and so on.  If the method is not found, Ruby then looks for the method *method_missing* in the initial object, then it's parent, and it's parent… etc.
+
+Rather than implement each of the underlying objects methods in the proxy, we can use *method_missing* to simply pass method calls to the unerlying object.
+
+Again, this has to big advantages:
+
+1. The proxy is greatly simplified by having far fewer methods
+2. The proxy is not coupled to the underlying object and can therefore be reused for multiple object classes.
 
