@@ -60,7 +60,7 @@ Disadvantages:
 
 The basic idea is to **delegate tasks to encapsulated algorithms which are interchangable at runtime**.
 
-In the Strategy pattern we have an object (the *context*) that is trying to get something done. But to get that thing done, we need to supply the context with a second object (the *strategy*) that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
+In the Strategy pattern we have an object (the *context*) that is trying to get something done. But to get that thing done, we need to supply the context with a second object, called the *strategy*, that helps ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼get the thing done.
 
 1. Define a family of objects which all do the same thing (ex: format output, generate graphics etc.).
 2. Ensure the family of objects share the same interface so that they are interchangable.
