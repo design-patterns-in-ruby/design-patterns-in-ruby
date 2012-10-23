@@ -93,19 +93,21 @@ In the default implementation, the notification sent to the observer doens't spe
 
 Another approach would be the *push* method where the notification includes other attributes which provide the Observer with additional information like the examples below.
 
-    observer.update(self, :salary_changed)
-    observer.update(self, :salary_changed, old_salary, new_salary)
-
+ruby
+observer.update(self, :salary_changed)
+observer.update(self, :salary_changed, old_salary, new_salary)
 
 An observer may only need to know when a specific attribute of the subject changes.  The simple implementation would notify the observer when any attribute changes.
 
 ##### Atomic Event Notifications
 If multiple attributes of a Subject are being updated and the updates are not independent, notifying Observers before all the updates are executed could cause an inconsistent state.
 
-	fred = Employee.new('Fred', 'Crane Operator', 30000)
-	fred.salary = 1000000
-	# Warning! Inconsistent state here!
-	fred.title = 'Vice President of Sales'
+````ruby
+fred = Employee.new('Fred', 'Crane Operator', 30000)
+fred.salary = 1000000
+# Warning! Inconsistent state here!
+fred.title = 'Vice President of Sales'
+````
 
 ##### What to do When an Observer Raises an Exception 
 It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
@@ -133,10 +135,10 @@ External iterator require the additional class to do the actual iterating, but t
 All the iterating logic occurs inside the aggregate object.
 Use a code block to pass your logic into the aggregate which then calls the block for each of it's elements.
 
-    colors = ['red', 'green', 'blue']
-    colors.each { |color|
-    	puts color
-    }
+````ruby
+colors = ['red', 'green', 'blue']
+colors.each { |color| puts color }
+````
 
 #### Enumerable Module
 
@@ -146,12 +148,14 @@ Ruby includes an [Enumerator module](http://ruby-doc.org/core-1.9.3/Enumerable.h
 
 With custom iterator implementations, if the original collection class changes while you're iterating through it's elements, it can create unexpected results.  To remedy this, you can have the iterator operate on a copy of the oringal collection.
 
-    class ArrayIterator
-      def initialize(array)
-	  	@array = Array.new(array)
-      	@index = 0
-	  end
-	 … 
+````ruby
+class ArrayIterator
+  def initialize(array)
+  	@array = Array.new(array)
+  	@index = 0
+  end
+  … 
+````
 
 ---
 ### COMMANDS
