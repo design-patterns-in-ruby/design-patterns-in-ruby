@@ -93,9 +93,10 @@ In the default implementation, the notification sent to the observer doens't spe
 
 Another approach would be the *push* method where the notification includes other attributes which provide the Observer with additional information like the examples below.
 
-ruby
+````ruby
 observer.update(self, :salary_changed)
 observer.update(self, :salary_changed, old_salary, new_salary)
+````
 
 An observer may only need to know when a specific attribute of the subject changes.  The simple implementation would notify the observer when any attribute changes.
 
