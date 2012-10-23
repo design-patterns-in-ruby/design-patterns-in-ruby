@@ -4,7 +4,7 @@ Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
 This book covers 14 of the original 23 GoF design patterns.
 
-1. [Template Method](#template_method)
+1. [Template Method](#template-method)
 2. [Strategy](#strategy)
 3. [Observer](#observer)
 4. [Composite](#composite)
@@ -47,7 +47,6 @@ This book covers 14 of the original 23 GoF design patterns.
 
 ## Design Patterns
 
-<a id="template_method"></a>
 ### TEMPLATE METHOD
 1. Create a **skeletal class** with methods that are common between algorithms.
 2. Create a **subclass** for each algorithm and override the common methods from the skeletal class.
@@ -57,7 +56,6 @@ Disadvantages:
   * no runtime flexibility
 
 ---
-<a id="strategy"></a>
 ### STRATEGY
 
 The basic idea is to **delegate tasks to encapsulated algorithms which are interchangable at runtime**.
@@ -77,7 +75,6 @@ Advantages:
 * promotes modularity
 
 ---
-<a id="observer"></a>
 ### OBSERVER
 
 The observer pattern is for **event driven programming**.
@@ -114,7 +111,6 @@ If multiple attributes of a Subject are being updated and the updates are not in
 It's also important to address what should happen when a notification causes an Observer to raise an exception. The correct way to handle exceptions will vary from case to case.
 
 ---
-<a id="composite"></a>
 ### COMPOSITE
 
 The composite deisgn pattern is a structural pattern used to represent objects that have a **hierarchical tree structure**.  It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
@@ -124,7 +120,6 @@ The implementation in the book is inflexible and doesn't allow Tasks to be dynam
 For a specific implementation, you can simply inherit from the Node class and extend it with any additional functions you may need.
 
 ---
-<a id="iterator"></a>
 ### ITERATOR
 
 The iterator design pattern provides sequential access to elements within a container without exposing how the container actually represents the elements.  The iterator can be thought of as a moveable pointer that allows access to elements encapsulated within a container.
@@ -159,7 +154,6 @@ With custom iterator implementations, if the original collection class changes w
 	 … 
 
 ---
-<a id="commands"></a>
 ### COMMANDS
 
 The command pattern is a behavior design pattern used to store the information necessary to call methods at a future time.
@@ -190,7 +184,6 @@ When installing applications, many will prompt the user with a number of install
 In some situations there is a fixed overhead to executing a certain type of command.  Queing up multiple commands and executing them together reduces the number of times we have to run the overhead code.  Database operations are an example of this.  If there isn't a persistent database connection, we have to create one each time we run database operations.  Since there is a cost to connecting to the database, a good approach may be to queue up the database operations and execute them in a batch.  The same logic holds for web applications when you need to make API calls to external applications.
 
 ---
-<a id="adapter"></a>
 ### ADAPTER
 
 > Convert the interface of a class into another interface clients expect. An adapter lets classes work together that could not otherwise because of incompatible interfaces.
@@ -209,7 +202,6 @@ Modifying instances or classes at run-time is advisable only when:
 If either of these points aren't true, it's probably better to create a seperate adapter.
 
 ---
-<a id="proxy"></a>
 ### PROXY
 
 #### Types of Proxies
