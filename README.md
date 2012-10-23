@@ -4,19 +4,19 @@ Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
 This book covers 14 of the original 23 GoF design patterns.
 
-1. [Template Method](#template-method)
-2. [Strategy](#strategy)
-3. [Observer](#observer)
-4. [Composite](#composite)
-5. [Iterator](#iterator)
-6. [Commands](#commands)
-7. [Adapter](#adapter)
-8. [Proxy](#proxy)
-9. Decorator
-10. Singleton
-11. Factory
-12. Builder
-13. Interpreter
+* [Template Method](#template-method)
+* [Strategy](#strategy)
+* [Observer](#observer)
+* [Composite](#composite)
+* [Iterator](#iterator)
+* [Commands](#commands)
+* [Adapter](#adapter)
+* [Proxy](#proxy)
+* Decorator <!--* [Interpreter](#interpreter)-->
+* Singleton <!--* [Singleton](#singleton)-->
+* Factory <!--* [Factory](#factory)-->
+* Builder <!--* [Builder](#builder)-->
+* Interpreter <!--* [Decorator](#decorator)-->
 
 
 ## Five Main Points
