@@ -3,6 +3,7 @@
 Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
 This book covers 14 of the original 23 GoF design patterns.
+Note: The book says it includes 14 design patterns but I only see 13.
 
 * [Template Method](#template-method)
 * [Strategy](#strategy)
@@ -253,8 +254,13 @@ This is a quick and dirty approach to adding decorators to an instance. Create a
 
 ````ruby
 w = SimpleWriter.new('out')
-class << w  alias old_write_line write_line
-    def write_line(line)    old_write_line("#{Time.new}: #{line}")  endend
+class << w
+  alias old_write_line write_line
+  
+  def write_line(line)
+    old_write_line("#{Time.new}: #{line}")
+  end
+end
 ````
 
 For the `w` instance of `SimpleWriter`, the original `write_line` method still exists and is pointed to by `old_write_line`.  Now, when `write_line` is called, the new method is executed and it then executes `old_write_line`.
