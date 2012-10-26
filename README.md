@@ -234,3 +234,33 @@ Again, this has to big advantages:
 1. The proxy is greatly simplified by having far fewer methods
 2. The proxy is not coupled to the underlying object and can therefore be reused for multiple object classes.
 
+---
+### DECORATOR
+
+The decorator design pattern allows for features to be added dynamically to an existing object.
+
+[Motivation](http://en.wikipedia.org/wiki/Decorator_pattern#Motivation) via wikipedia
+
+With Ruby, the easiest way to use the decorator pattern is to create a module for each decorator. The decorators that you want to use can be dynamically added to an instance using `extend`.
+
+Ruby includes a [`forwardable` module](http://ruby-doc.org/stdlib-1.9.2/libdoc/forwardable/rdoc/Forwardable.html) that provides an easy way to add delegation methods. `forwardable` may allow you to create cleaner more readable code, it really depends on the situation.
+
+#### Dynamic Alternatives
+
+Ruby allows for dynamically modifying instances. We can use to this feature to add decorators at run-time.
+
+This is a quick and dirty approach to adding decorators to an instance. Create an alias for the original method, then add a module with the same name as the original method.  This is shown below:
+
+````ruby
+w = SimpleWriter.new('out')
+class << w  alias old_write_line write_line
+    def write_line(line)    old_write_line("#{Time.new}: #{line}")  endend
+````
+
+For the `w` instance of `SimpleWriter`, the original `write_line` method still exists and is pointed to by `old_write_line`.  Now, when `write_line` is called, the new method is executed and it then executes `old_write_line`.
+
+
+disadvantage of using extend with modules:
+- can't easily remove modules
+
+
