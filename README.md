@@ -89,7 +89,7 @@ It's also possible to use code blocks as observers.  This isn't supported by the
 There are a few additional concerns that should be addressed when working with the Observable pattern.
 
 ##### Push vs Pull
-In the default implementation, the notification sent to the observer doens't specify which of the Subjects attributes has changed.  To find out which attribute has changed, the Observer has to check the Subjects attributes, this is the *pull* method.
+In the default implementation, the notification sent to the observer doesn't specify which of the Subjects attributes has changed.  To find out which attribute has changed, the Observer has to check the Subjects attributes, this is the *pull* method.
 
 Another approach would be the *push* method where the notification includes other attributes which provide the Observer with additional information like the examples below.
 
@@ -253,8 +253,14 @@ This is a quick and dirty approach to adding decorators to an instance. Create a
 
 ````ruby
 w = SimpleWriter.new('out')
-class << w  alias old_write_line write_line
-    def write_line(line)    old_write_line("#{Time.new}: #{line}")  endend
+
+class << w
+  alias old_write_line write_line
+  
+  def write_line(line)
+    old_write_line("#{Time.new}: #{line}")
+  end
+end
 ````
 
 For the `w` instance of `SimpleWriter`, the original `write_line` method still exists and is pointed to by `old_write_line`.  Now, when `write_line` is called, the new method is executed and it then executes `old_write_line`.
