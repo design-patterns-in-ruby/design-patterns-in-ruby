@@ -7,9 +7,11 @@ class Report
   def output_report
     output_start
     output_head
+    output_body_start
     @text.each do |line|
       output_line(line)
     end
+    output_body_end
     output_end
   end
 
