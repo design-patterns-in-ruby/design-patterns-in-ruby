@@ -217,7 +217,7 @@ A protection proxy protects an object from unauthorized access.  To ensure metho
 ##### Remote Proxy
 Remote proxies provides access to objects which are running on remote machines.
 
-A great example of a remote proxy is [Distributed Ruby (DRb)](http://segment7.net/projects/ruby/drb/introduction.html), which allows Ruby programs to communicate over a network. With DRb, the client machines runs a proxy which handles all of the network communications behind the scenes.
+A great example of a remote proxy is [Distributed Ruby (DRb)](http://www.ruby-doc.org/stdlib-2.1.0/libdoc/drb/rdoc/DRb.html), which allows Ruby programs to communicate over a network. With DRb, the client machines runs a proxy which handles all of the network communications behind the scenes.
 
 ##### Virtual Proxy
 Virtual proxies allow us to delay the creation of an object until it is absolutely necessary.  This is useful when creating the object is computationaly expensive.
