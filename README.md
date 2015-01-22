@@ -1,8 +1,8 @@
-# Design Patterns in Ruby
+# Design Patterns trong Ruby
 
-Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
+Cài đặt các ví dụ trong sách **Design Patterns in Ruby** của tác giả *Russ Olsen*
 
-This book covers 14 of the original 23 GoF design patterns.
+Quyển sách này gồm 14 trong tổng số 23 GoF design patterns.
 
 * [Template Method](#template-method)
 * [Strategy](#strategy)
@@ -18,30 +18,40 @@ This book covers 14 of the original 23 GoF design patterns.
 * [Builder](#builder)
 * [Interpreter](#interpreter)
 
+Ngoài ra còn 3 design patterns mới theo gần đây cùng với sự xuất hiện của Ruby:
 
-## Five Main Points
+* [Internal Domain-Specific Language (DSL)]
+* [Meta-programming]
+* [Convention Not Configuration]
+
+
+## 5 điểm chính quan trọng cần lưu ý đối với 1 design pattern
 
 1. Separate the things that change from the things that stay the same.
-    * promotes DRY code
-    * improves maintainability
 
-2.  Program to an interface, not an implementation.
+   Hãy tách những đoạn mã không thay đổi riêng với những đoạn mã thay đổi để:
+    * cải thiện DRY của source code
+    * tăng khả năng bảo trì
 
-    Code should belong to the most general object possible, and specific classes should inherit from the general class.
-    * increases modularity
+2. Program to an interface, not an implementation.
+
+   Nên code từ đối tượng chung nhất có thể, và các class cụ thể nên được kế thừa lại từ class chung này.
+    * tăng tính modun hóa
 
 3. Prefer composition over inheritance
 
-   Avoid saying that an object is a kind of something and instead say that it has something.  In other words, it's often better to reference other classes or modules than to put functionality in superclasses.
-    * increases encapsulation
-    * increases modularity, implementations can be easily swapped
+   Tránh nói rằng "đôi tượng là một loại gì đó", mà thay vào đó hãy nói "nó là cái gì đó". Nói tóm lại, các tốt nhất là nên tham chiếu tới một class hay module khác hơn là đặt các function vào super class.
+    * tăng tính đóng gói
+    * tăng tính modun hóa
+    * việc cài đặt implementation có thể dễ dàng tùy biến
 
 4. delegate, delegate, delegate
-  Let other classes handle functionality within their domain
+   
+   Hãy để các class khác tự xử lý các function trong phạm vi của chúng.
 
 5. You ain't gonna need it (Russ Olsen's addition)
 
-   Don't implement features or design in flexibility that you don't immediately need because you will probably never need it.
+   Đừng cài đặt những tính năng hoặc thiết kế quá mềm dẻo mà bạn không cần ngay lập tức vì bạn có thể sẽ không bao giờ cần chúng.
 
 ----------------------------------------------------------------
 
