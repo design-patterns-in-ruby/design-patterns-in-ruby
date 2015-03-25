@@ -1,16 +1,16 @@
-require './task'
-require './composite_task'
+require_relative 'task'
+require_relative 'composite_task'
 
-require './make_cake_task'
+require_relative 'make_cake_task'
 
-require './make_batter_task'
-require './add_dry_ingredients_task'
-require './add_liquids_task'
-require './mix_task'
+require_relative 'make_batter_task'
+require_relative 'add_dry_ingredients_task'
+require_relative 'add_liquids_task'
+require_relative 'mix_task'
 
-require './fill_pan_task'
-require './bake_task'
-require './frost_task'
+require_relative 'fill_pan_task'
+require_relative 'bake_task'
+require_relative 'frost_task'
 
 cake_batter = MakeBatterTask.new
 puts "#{cake_batter.time_required} minutes to make cake batter"

@@ -1,5 +1,5 @@
-require './node'
-require './task'
+require_relative 'node'
+require_relative 'task'
 
 make_cake = Task.new('Make cake')
 
