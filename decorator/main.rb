@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # Naive implementation
 
-# require './enhanced_writer'
+# require_relative 'enhanced_writer'
 
 # writer = EnhancedWriter.new('out.txt')
 
@@ -16,11 +16,11 @@
 # ------------------------------------------------------
 # Implementation using the Decorator design pattern
 
-require './simple_writer'
-require './writer_decorator'
-require './numbering_writer'
-require './check_summing_writer'
-require './time_stamping_writer'
+require_relative 'simple_writer'
+require_relative 'writer_decorator'
+require_relative 'numbering_writer'
+require_relative 'check_summing_writer'
+require_relative 'time_stamping_writer'
 
 # writer = NumberingWriter.new(SimpleWriter.new('final.txt'))
 # writer.write_line('Hello out there')
