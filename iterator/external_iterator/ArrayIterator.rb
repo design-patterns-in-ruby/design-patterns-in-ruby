@@ -2,7 +2,7 @@ class ArrayIterator
   def initialize(array)
     # Make a deep copy the array so that changes to the original array
     # wont effect the iterator
-    @array = Array.new(array)
+    @array = array.clone
     @index = 0
   end
 
