@@ -1,4 +1,4 @@
-require '../SimpleWriter'
+require '../simple_writer'
 require './decorator_modules'
 
 w = SimpleWriter.new('out.txt')
