@@ -1,4 +1,5 @@
 # Design Patterns in Ruby
+updated to work with **ruby 2.2.0**
 
 Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
