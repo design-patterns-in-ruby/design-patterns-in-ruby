@@ -1,4 +1,4 @@
-require './ArrayIterator'
+require_relative 'array_iterator'
 
 i = ArrayIterator.new(['red', 'green', 'blue'])
 while i.has_next?

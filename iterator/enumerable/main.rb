@@ -1,5 +1,5 @@
-require './Account'
-require './Portfolio'
+require_relative 'account'
+require_relative 'portfolio'
 
 portfolio = Portfolio.new
 portfolio.add_account Account.new('red', 2000)
