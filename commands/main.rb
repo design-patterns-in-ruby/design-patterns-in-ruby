@@ -1,8 +1,8 @@
-require './command'
-require './composite_command'
-require './copy_file'
-require './create_file'
-require './delete_file'
+require_relative 'command'
+require_relative 'composite_command'
+require_relative 'copy_file'
+require_relative 'create_file'
+require_relative 'delete_file'
 
 cmds = CompositeCommand.new
 cmds.add_command CreateFile.new('file1.txt', "hello world\n")
