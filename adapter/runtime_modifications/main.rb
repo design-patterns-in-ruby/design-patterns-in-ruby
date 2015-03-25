@@ -1,6 +1,6 @@
-require './Renderer'
-require './TextObject'
-require './BritishTextObject'
+require './renderer'
+require './text_object'
+require './british_text_object'
 
 # Extend the BritishTexObject to include the methods
 # that the Renderer class requires
@@ -28,7 +28,7 @@ class << bto
   def color
     colour
   end
-  
+
   def text
     string
   end

@@ -1,6 +1,6 @@
-require './Encrypter'
-require './Decrypter'
-require './StringIOAdapter'
+require './encrypter'
+require './decrypter'
+require './string_io_adapter'
 
 reader = File.open('message.txt')
 writer = File.open('message.encrypted','w')
