@@ -1,6 +1,6 @@
-require './renderer'
-require './text_object'
-require './british_text_object'
+require_relative 'renderer'
+require_relative 'text_object'
+require_relative 'british_text_object'
 
 # Extend the BritishTexObject to include the methods
 # that the Renderer class requires
