@@ -1,4 +1,4 @@
-require './ModuleBasedLogger'
+require_relative 'module_based_logger'
 
 ModuleBasedLogger.level = ModuleBasedLogger::INFO
 ModuleBasedLogger.info('Computer wins chess game.')

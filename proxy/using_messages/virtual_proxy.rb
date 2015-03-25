@@ -1,3 +1,5 @@
+# Generic virtual proxy
+
 class VirtualProxy
   def initialize(&creation_block)
     @creation_block = creation_block

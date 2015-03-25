@@ -1,4 +1,4 @@
-require './ClassBasedLogger'
+require_relative 'class_based_logger'
 
 ClassBasedLogger.level = ClassBasedLogger::INFO
 ClassBasedLogger.info('Computer wins chess game.')

@@ -1,7 +1,6 @@
-require './Report'
-
-require './HTML_FORMATTER'
-require './PLAIN_TEXT_FORMATTER'
+require_relative 'report'
+require_relative 'html_formatter'
+require_relative 'plain_text_formatter'
 
 report = Report.new(&HTML_FORMATTER)
 report.output_report

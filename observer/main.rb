@@ -1,7 +1,7 @@
-require './Subject'
-require './Employee'
-require './Payroll'
-require './TaxMan'
+require_relative 'subject'
+require_relative 'employee'
+require_relative 'payroll'
+require_relative 'tax_man'
 
 fred = Employee.new('Fred Flintstone', 'Crane Operator', 30000)
 

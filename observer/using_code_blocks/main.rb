@@ -1,5 +1,5 @@
-require './Subject'
-require './Employee'
+require_relative 'subject'
+require_relative '../employee'
 
 fred = Employee.new('Fred Flintstone', 'Crane Operator', 30000)
 fred.add_observer do |changed_employee|

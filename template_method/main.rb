@@ -1,6 +1,5 @@
-require './Report'
-require './HTMLReport'
-require './PlainTextReport'
+require_relative 'html_report'
+require_relative 'plain_text_report'
 
 report = HTMLReport.new
 report.output_report

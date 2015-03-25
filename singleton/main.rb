@@ -1,4 +1,4 @@
-require './SimpleLogger'
+require_relative 'simple_logger'
 
 logger = SimpleLogger.instance
 puts logger.level

@@ -1,7 +1,9 @@
+require_relative 'report'
+
 class PlainTextReport < Report
   def output_start
   end
-  
+
   def output_head
     puts "**** #{@title} ****"
     puts

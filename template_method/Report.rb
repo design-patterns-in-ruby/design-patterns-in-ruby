@@ -8,9 +8,7 @@ class Report
     output_start
     output_head
     output_body_start
-    @text.each do |line|
-      output_line(line)
-    end
+    @text.each { |line| output_line(line) }
     output_body_end
     output_end
   end
@@ -24,7 +22,7 @@ class Report
 
   def output_body_start
   end
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼
+
   def output_line(line)
     raise 'Called abstract method: output_line'
   end
