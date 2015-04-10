@@ -198,7 +198,7 @@ http://en.wikipedia.org/wiki/Design_pattern_(computer_science)
 
 Ruby allows for classes to be modified at runtime.  Consequently, rather than create an adapter to modify a classes API, we can simply modify the class at runtime to add or alter methods.
 
-Alternatively, Ruby also allows the runtime modification of individual instances.  This provides a more
+Alternatively, Ruby also allows the runtime modification of individual instances.
 
 Modifying instances or classes at run-time is advisable only when:
 
