@@ -299,7 +299,7 @@ Since we can use global variables to hold singletons, it follows that we can als
 Disadvantages:
 
 * Constant variables can be reassigned at any time. A warning is returned when they are changed but they are still changed.
-* Lazy instantiation isn'e possible.
+* Lazy instantiation isn't possible.
 * We can't prevent the creation of more than one instance of the singleton class.
 
 ##### Classes as Singletons
