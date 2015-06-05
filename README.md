@@ -294,7 +294,7 @@ Disadvantages:
 * Lazy instantiation isn't possible.
 
 ##### Constants
-Since we can use global variables to hold singletons, it follows that we can also constants.
+Since we can use global variables to hold singletons, it follows that we can also use constants.
 
 Disadvantages:
 
