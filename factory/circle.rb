@@ -1,9 +1,7 @@
 require_relative 'shape'
 
 class Circle < Shape
-
-  def draw 
+  def draw
     puts "Inside Circle::draw() method."
   end
-
 end
