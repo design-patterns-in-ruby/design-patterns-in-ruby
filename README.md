@@ -316,4 +316,15 @@ The code is exactly the same as using a class as a singleton, except we define a
 
 A module is a collection of methods and variables, but unlike classes, modules cannot be instantiated.  Because of this, using a module for a singleton better adheres to coding conventions and makes for clearer code.
 
+---
+### Factory
 
+Factory pattern is one of most used design pattern in Object oriented design. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+
+In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+
+####Implementation
+
+We're going to create a Shape interface and concrete classes implementing the Shape interface. A factory class ShapeFactory is defined as a next step.
+
+FactoryPatternDemo, our demo class will use ShapeFactory to get a Shape object. It will pass information (CIRCLE / RECTANGLE / SQUARE) to ShapeFactory to get the type of object it needs.
