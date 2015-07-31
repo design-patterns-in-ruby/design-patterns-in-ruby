@@ -1,6 +1,6 @@
 require_relative 'color'
 class Blue < Color
   def fill
-    puts "Inside Green::fill() method."
+    puts "Inside Blue::fill() method."
   end
 end
