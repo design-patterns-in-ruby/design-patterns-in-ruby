@@ -27,4 +27,5 @@ require_relative 'time_stamping_writer'
 
 writer = CheckSummingWriter.new(TimeStampingWriter.new(NumberingWriter.new(SimpleWriter.new('final.txt'))))
 writer.write_line('Hello out there')
+writer.close
 puts("checksum: #{writer.check_sum}")
