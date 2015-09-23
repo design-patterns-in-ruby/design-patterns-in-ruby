@@ -340,6 +340,6 @@ In Abstract Factory pattern an interface is responsible for creating a factory o
 
 #### Implementation
 
-We are going to create a Shape and Color interfaces and concrete classes implementing these interfaces. We create an abstract factory class AbstractFactory as next step. Factory classes ShapeFactory and ColorFactory are defined where each factory extends AbstractFactory. A factory creator/generator class FactoryProducer is created.
+We are going to create a Shape and Color interfaces and concrete classes implementing these interfaces. We create an abstract factory class AbstractFactory as next step. Factory classes RedCircleFactory, GreenSquareFactory and BlueRectangleFactory are defined where each factory extends AbstractFactory. A factory creator/generator class ColoredShapeFactory is created.
 
-AbstractFactoryPatternDemo, our demo class uses FactoryProducer to get a AbstractFactory object. It will pass information (CIRCLE / RECTANGLE / SQUARE for Shape) to AbstractFactory to get the type of object it needs. It also passes information (RED / GREEN / BLUE for Color) to AbstractFactory to get the type of object it needs.
+AbstractFactoryPatternDemo, our demo class uses ColoredShapedFactory to get an AbstractFactory object. It will pass information (RedCircle / GreenSquare / BlueRectangle) to ColoredShapeFactory to get the type of factory object it needs.
