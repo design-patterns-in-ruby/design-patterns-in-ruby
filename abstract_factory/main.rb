@@ -1,19 +1,20 @@
-require_relative 'factory_producer'
+require_relative 'colored_shape_factory'
 
-factory_producer = FactoryProducer.new
+colored_shape_factory = ColoredShapeFactory.new
 
-shape_factory = factory_producer.get_factory("SHAPE")
-circle = shape_factory.get_shape('CIRCLE')
-circle.draw
-rectangle = shape_factory.get_shape('RECTANGLE')
-rectangle.draw
-square = shape_factory.get_shape('SQUARE')
-square.draw
+red_circle_factory = colored_shape_factory.get_factory("RedCircle")
+puts "Red Circle Factory"
+red_circle_factory.get_shape.draw
+red_circle_factory.get_color.fill
+puts
 
-color_factory = factory_producer.get_factory("COLOR")
-red = color_factory.get_color("RED")
-red.fill
-blue = color_factory.get_color("BLUE")
-blue.fill
-green = color_factory.get_color("GREEN")
-green.fill
+green_square_factory = colored_shape_factory.get_factory("GreenSquare")
+puts "Green Square Factory"
+green_square_factory.get_shape.draw
+green_square_factory.get_color.fill
+puts
+
+blue_rectangle_factory = colored_shape_factory.get_factory("BlueRectangle")
+puts "Blue Rectangle Factory"
+blue_rectangle_factory.get_shape.draw
+blue_rectangle_factory.get_color.fill
