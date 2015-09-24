@@ -343,3 +343,21 @@ In Abstract Factory pattern an interface is responsible for creating a factory o
 We are going to create a Shape and Color interfaces and concrete classes implementing these interfaces. We create an abstract factory class AbstractFactory as next step. Factory classes RedCircleFactory, GreenSquareFactory and BlueRectangleFactory are defined where each factory extends AbstractFactory. A factory creator/generator class ColoredShapeFactory is created.
 
 AbstractFactoryPatternDemo, our demo class uses ColoredShapedFactory to get an AbstractFactory object. It will pass information (RedCircle / GreenSquare / BlueRectangle) to ColoredShapeFactory to get the type of factory object it needs.
+
+---
+
+### Builder
+
+The very simple idea behind the Builder pattern is that you encapsulate object construction logic behind a class of its own. The builder class takes charge of assembling all the components of a complex object. Each builder has an interface that lets you specify the configuration of your new object step by step.
+
+In a sense, a builder is a sort of like a multipart new method, where objects are created in an extended process instead of all in one shot.
+
+### Implementation
+
+We follow the example in the book by first starting to implement the classes of the basic compoenents of a computer system (CPU, Motherboard, Drives). The Motherboard class is a composite containing components such as CPU. The Computer class is a composite as well containing a display, motherboard, and drives. There are two types of CPUs (BasicCPU and TurboCPU). You might now appreciate the complexity of building a single computer system everytime you might need one.
+
+We continue by building our builder ComputerBuilder which will simplify the way we build computers in our client application. The ComputerBuilder class handles an instance of a Computer object. We then construct instance method to handle building our Computer instance object. Methods such as, turbo() to tell our Computer's Motherboard to have a TurboCPU and not a BasicCPU by default. Moreover, (add_cd, add_dvd, add_hard_disk) methods to add drives to our Computer. And also other methods.
+
+Finally, in our client application we instantiate an object of ComputerBuilder and we call the aforementioned methods on the builder to build our custom computer object during run-time.
+
+Note that we also make use of magic methods to rapidly build our computer object. As per the book we have overridden the method_missing() method to parse the method name and rapidly construct the object we need.
