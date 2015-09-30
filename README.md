@@ -16,10 +16,9 @@ This book covers 14 of the original 23 GoF design patterns.
 * [Decorator](#decorator)
 * [Singleton](#singleton)
 * [Factory](#factory)
+* [Abstract Factory](#abstract-factory)
 * [Builder](#builder)
 * [Interpreter](#interpreter)
-* [Abstract Factory](#abstract-factory)
-
 
 ## Five Main Points
 
