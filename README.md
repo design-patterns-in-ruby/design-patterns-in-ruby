@@ -279,7 +279,7 @@ This pattern is useful when you want one instance of a class and many different 
 
 GoF: Let the class of the singleton object manage the creation and access to its sole instance.
 
-The Ruby standard library includes a [Singleton module](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/singleton/rdoc/Singleton.html) module.
+The Ruby standard library includes a [Singleton module](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/singleton/rdoc/Singleton.html).
 
 The `singleton module` is thorough, it overrides multiple methods to prevent multiple instances of the singleton class. It also uses lazy instantiation, creating the instance only once the `instance` method is called.
 
