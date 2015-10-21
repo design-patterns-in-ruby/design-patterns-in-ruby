@@ -82,7 +82,7 @@ The observer pattern is for **event driven programming**.
 
 An object, called the **subject**, maintains a list of its dependents, called **observers**, and notifies them automatically of any state changes, usually by calling one of their methods.
 
-The Ruby Standard Library includes an [Observable module](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/observer/rdoc/Observable.html) that implements this pattern.
+The Ruby Standard Library includes an [Observable module](http://ruby-doc.org/stdlib/libdoc/observer/rdoc/Observable.html) that implements this pattern.
 
 It's also possible to use code blocks as observers.  This isn't supported by the Observable module in the Ruby Standard Library, but it's easy to implement.
 
@@ -144,7 +144,7 @@ colors.each { |color| puts color }
 
 #### Enumerable Module
 
-Ruby includes an [Enumerator module](http://ruby-doc.org/core-1.9.3/Enumerable.html)
+Ruby includes an [Enumerator module](http://ruby-doc.org/core/Enumerable.html)
 
 > The Enumerable mixin provides collection classes with several traversal and searching methods, and with the ability to sort. The class must provide a method each, which yields successive members of the collection. If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful <=> operator, as these methods rely on an ordering between members of the collection.
 
@@ -218,7 +218,7 @@ A protection proxy protects an object from unauthorized access.  To ensure metho
 ##### Remote Proxy
 Remote proxies provides access to objects which are running on remote machines.
 
-A great example of a remote proxy is [Distributed Ruby (DRb)](http://www.ruby-doc.org/stdlib-2.1.0/libdoc/drb/rdoc/DRb.html), which allows Ruby programs to communicate over a network. With DRb, the client machines runs a proxy which handles all of the network communications behind the scenes.
+A great example of a remote proxy is [Distributed Ruby (DRb)](http://ruby-doc.org/stdlib/libdoc/drb/rdoc/DRb.html), which allows Ruby programs to communicate over a network. With DRb, the client machines runs a proxy which handles all of the network communications behind the scenes.
 
 ##### Virtual Proxy
 Virtual proxies allow us to delay the creation of an object until it is absolutely necessary.  This is useful when creating the object is computationaly expensive.
@@ -244,7 +244,7 @@ The decorator design pattern allows for features to be added dynamically to an e
 
 With Ruby, the easiest way to use the decorator pattern is to create a module for each decorator. The decorators that you want to use can be dynamically added to an instance using `extend`.
 
-Ruby includes a [`forwardable` module](http://ruby-doc.org/stdlib-1.9.2/libdoc/forwardable/rdoc/Forwardable.html) that provides an easy way to add delegation methods. `forwardable` may allow you to create cleaner more readable code, it really depends on the situation.
+Ruby includes a [`forwardable` module](http://ruby-doc.org/stdlib/libdoc/forwardable/rdoc/Forwardable.html) that provides an easy way to add delegation methods. `forwardable` may allow you to create cleaner more readable code, it really depends on the situation.
 
 #### Dynamic Alternatives
 
@@ -279,7 +279,7 @@ This pattern is useful when you want one instance of a class and many different 
 
 GoF: Let the class of the singleton object manage the creation and access to its sole instance.
 
-The Ruby standard library includes a [Singleton module](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/singleton/rdoc/Singleton.html).
+The Ruby standard library includes a [Singleton module](http://ruby-doc.org/stdlib/libdoc/singleton/rdoc/Singleton.html).
 
 The `singleton module` is thorough, it overrides multiple methods to prevent multiple instances of the singleton class. It also uses lazy instantiation, creating the instance only once the `instance` method is called.
 
