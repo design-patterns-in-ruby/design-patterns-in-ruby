@@ -1,8 +1,8 @@
-require 'FileUtils'
+require 'fileutils'
 
 class CreateFile < Command
   def initialize(path, contents)
-    super "Create file: #{path}" 
+    super "Create file: #{path}"
     @path = path
     @contents = contents
   end
