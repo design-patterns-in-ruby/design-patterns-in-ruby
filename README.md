@@ -66,7 +66,7 @@ In the Strategy pattern we have an object (the *context*) that is trying to get 
 1. Define a family of objects which all do the same thing (ex: format output, generate graphics etc.).
 2. Ensure the family of objects share the same interface so that they are interchangable.
 
-There are two strategies to passing data from the *context* object to the *strategy* object.  We can pass the data as paramaters when the strategy is called, or we can pass the context object as the single parameter.
+There are two strategies to passing data from the *context* object to the *strategy* object.  We can pass the data as parameters when the strategy is called, or we can pass the context object as the single parameter.
 
 If the strategies are very simple and have only one method, we can even use code blocks for our algorithms and simply use `block.call`.  However, if multiple methods are needed, the strategies must be structured as separate classes.
 
@@ -228,7 +228,7 @@ When building a proxy, we could implement a method for each method in the underl
 
 In Ruby, when you call a method on an object, Ruby looks for the method in the initial object and it's modules and then works it's way up the stack to that objects superclass and then it's superclass and so on.  If the method is not found, Ruby then looks for the method *method_missing* in the initial object, then it's parent, and it's parent… etc.
 
-Rather than implement each of the underlying objects methods in the proxy, we can use *method_missing* to simply pass method calls to the unerlying object.
+Rather than implement each of the underlying objects methods in the proxy, we can use *method_missing* to simply pass method calls to the underlying object.
 
 Again, this has to big advantages:
 
@@ -352,7 +352,7 @@ In a sense, a builder is a sort of like a multipart new method, where objects ar
 
 #### Implementation
 
-We follow the example in the book by first starting to implement the classes of the basic compoenents of a computer system (CPU, Motherboard, Drives). The Motherboard class is a composite containing components such as CPU. The Computer class is a composite as well containing a display, motherboard, and drives. There are two types of CPUs (BasicCPU and TurboCPU). You might now appreciate the complexity of building a single computer system everytime you might need one.
+We follow the example in the book by first starting to implement the classes of the basic components of a computer system (CPU, Motherboard, Drives). The Motherboard class is a composite containing components such as CPU. The Computer class is a composite as well containing a display, motherboard, and drives. There are two types of CPUs (BasicCPU and TurboCPU). You might now appreciate the complexity of building a single computer system everytime you might need one.
 
 We continue by building our builder ComputerBuilder which will simplify the way we build computers in our client application. The ComputerBuilder class handles an instance of a Computer object. We then construct instance method to handle building our Computer instance object. Methods such as, turbo() to tell our Computer's Motherboard to have a TurboCPU and not a BasicCPU by default. Moreover, (add_cd, add_dvd, add_hard_disk) methods to add drives to our Computer. And also other methods.
 
