@@ -1,11 +1,11 @@
-require 'FileUtils'
+require 'fileutils'
 
 class DeleteFile < Command
   def initialize(path)
     super "Delete file: #{path}"
     @path = path
   end
-  
+
   def execute
     if File.exists?(@path)
       @contents = File.read(@path)

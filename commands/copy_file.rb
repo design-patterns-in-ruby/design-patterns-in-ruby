@@ -1,4 +1,4 @@
-require 'FileUtils'
+require 'fileutils'
 
 class CopyFile < Command
   def initialize(source, target)
