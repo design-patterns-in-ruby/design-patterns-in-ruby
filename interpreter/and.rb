@@ -1,4 +1,4 @@
-require_relative "expression"
+require_relative 'expression'
 
 class And < Expression
   def initialize(expression1, expression2)

@@ -8,11 +8,11 @@ class CompositeCommand < Command
   end
 
   def execute
-    @commands.each { |cmd| cmd.execute }
+    @commands.each(&:execute)
   end
 
   def unexecute
-    @commands.reverse.each { |cmd| cmd.unexecute }
+    @commands.reverse_each(&:unexecute)
   end
 
   def description

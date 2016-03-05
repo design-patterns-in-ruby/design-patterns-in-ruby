@@ -4,6 +4,6 @@ class AddLiquidsTask < Task
   end
 
   def time_required
-    1.5   # 1.5 minutes to add liquids
+    1.5 # 1.5 minutes to add liquids
   end
 end

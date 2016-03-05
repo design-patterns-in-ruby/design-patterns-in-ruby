@@ -9,7 +9,7 @@ class CompositeTask < Task
     task.parent = self
   end
 
-  alias :<< :add_sub_task
+  alias << add_sub_task
 
   def remove_sub_task(task)
     @sub_tasks.delete(task)

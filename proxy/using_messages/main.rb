@@ -8,7 +8,7 @@ proxy.deposit(25)
 proxy.withdraw(50)
 puts "account balance is now: #{proxy.balance}"
 
-array = VirtualProxy.new { Array.new }
+array = VirtualProxy.new { [] }
 array << 'hello'
 array << 'out'
 array << 'there'

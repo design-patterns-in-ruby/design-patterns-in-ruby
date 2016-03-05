@@ -12,7 +12,6 @@ class WriterDecorator
   end
 end
 
-
 # The WriterDecorator class above is equivelent to the class below.
 # The 'forwardable' module generates the delegating methods
 

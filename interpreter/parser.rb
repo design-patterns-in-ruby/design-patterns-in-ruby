@@ -1,11 +1,11 @@
-require_relative "expression"
-require_relative "all"
-require_relative "file_name"
-require_relative "bigger"
-require_relative "writable"
-require_relative "not"
-require_relative "or"
-require_relative "and"
+require_relative 'expression'
+require_relative 'all'
+require_relative 'file_name'
+require_relative 'bigger'
+require_relative 'writable'
+require_relative 'not'
+require_relative 'or'
+require_relative 'and'
 
 class Parser
   def initialize(text)
@@ -18,25 +18,25 @@ class Parser
 
   def expression
     token = next_token
-    if token == nil
+    if token.nil?
       nil
-    elsif token == "("
+    elsif token == '('
       result = expression
-      raise "Expected )" unless next_token == ")"
+      raise 'Expected )' unless next_token == ')'
       result
-    elsif token == "all"
+    elsif token == 'all'
       All.new
-    elsif token == "writable"
+    elsif token == 'writable'
       Writable.new
-    elsif token == "bigger"
+    elsif token == 'bigger'
       Bigger.new(next_token.to_i)
-    elsif token == "filename"
+    elsif token == 'filename'
       FileName.new(next_token)
-    elsif token == "not"
+    elsif token == 'not'
       Not.new(expression)
-    elsif token == "and"
+    elsif token == 'and'
       And.new(expression, expression)
-    elsif token == "or"
+    elsif token == 'or'
       Or.new(expression, expression)
     else
       raise "Unexpected token: #{token}"

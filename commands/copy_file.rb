@@ -8,15 +8,13 @@ class CopyFile < Command
   end
 
   def execute
-    if File.exists?(@target)
-      @contents = File.read(@target)
-    end
+    @contents = File.read(@target) if File.exist?(@target)
     FileUtils.copy(@source, @target)
   end
 
   def unexecute
     if @contents
-      f = File.open(@target,'w')
+      f = File.open(@target, 'w')
       f.write(@contents)
       f.close
     else

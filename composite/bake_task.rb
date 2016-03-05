@@ -4,6 +4,6 @@ class BakeTask < Task
   end
 
   def time_required
-    42   # 42 minutes
+    42 # 42 minutes
   end
 end

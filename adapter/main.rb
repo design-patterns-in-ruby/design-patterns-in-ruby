@@ -3,7 +3,7 @@ require_relative 'decrypter'
 require_relative 'string_io_adapter'
 
 reader = File.open('message.txt')
-writer = File.open('message.encrypted','w')
+writer = File.open('message.encrypted', 'w')
 encrypter = Encrypter.new('XYZZY')
 encrypter.encrypt(reader, writer)
 reader.close

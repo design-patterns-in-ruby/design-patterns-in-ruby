@@ -1,15 +1,15 @@
-require_relative "cpus"
-require_relative "drive"
-require_relative "motherboard"
-require_relative "computer"
-require_relative "computer_builder"
+require_relative 'cpus'
+require_relative 'drive'
+require_relative 'motherboard'
+require_relative 'computer'
+require_relative 'computer_builder'
 
 builder = ComputerBuilder.new
 builder.turbo
 builder.display(:lcd)
 builder.add_cd
 builder.add_dvd(true)
-builder.add_hard_disk(100000)
+builder.add_hard_disk(100_000)
 
 # manufacture 10 computers using the builder
 computers = []
@@ -39,7 +39,7 @@ rescue Exception => e
 end
 
 # use magic method to rapidly build a computer
-puts "Computer built with magic method builder"
+puts 'Computer built with magic method builder'
 builder = ComputerBuilder.new
 builder.add_cd_and_dvd_and_harddisk_and_turbo
 computer = builder.computer

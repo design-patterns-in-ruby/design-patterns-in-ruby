@@ -1,4 +1,4 @@
-require_relative "expression"
+require_relative 'expression'
 
 class Bigger < Expression
   def initialize(size)

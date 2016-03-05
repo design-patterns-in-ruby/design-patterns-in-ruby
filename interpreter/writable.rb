@@ -1,4 +1,4 @@
-require_relative "expression"
+require_relative 'expression'
 
 class Writable < Expression
   def evaluate(dir)

@@ -3,7 +3,7 @@ module ModuleBasedLogger
   WARNING = 2
   INFO = 3
 
-  @@level =  WARNING
+  @@level = WARNING
 
   # Lazily instantiate @@log
   def self.log

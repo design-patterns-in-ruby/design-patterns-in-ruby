@@ -21,5 +21,3 @@ puts make_batter.time_required
 # puts make_cake[0].leaf?
 # puts make_cake[0].name
 # puts make_cake[1].time_required
-
-

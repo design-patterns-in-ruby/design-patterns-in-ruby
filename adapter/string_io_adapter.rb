@@ -5,16 +5,14 @@ class StringIOAdapter
   end
 
   def getbyte
-    if @position >= @string.length
-      raise EOFError
-    end
+    raise EOFError if @position >= @string.length
 
     ch = @string.getbyte(@position)
     @position += 1
-    return ch
+    ch
   end
 
   def eof?
-    return @position >= @string.length
+    @position >= @string.length
   end
 end

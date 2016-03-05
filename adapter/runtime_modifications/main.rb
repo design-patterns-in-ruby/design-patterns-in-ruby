@@ -6,15 +6,15 @@ require_relative 'british_text_object'
 # that the Renderer class requires
 class BritishTextObject
   def color
-    return colour
+    colour
   end
 
   def text
-    return string
+    string
   end
 
   def size_inches
-    return size_mm / 25.4
+    size_mm / 25.4
   end
 end
 

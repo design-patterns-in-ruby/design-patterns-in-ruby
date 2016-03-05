@@ -6,7 +6,7 @@ end
 
 module NumberingWriter
   attr_reader :line_number
-  
+
   def write_line(line)
     @line_number ||= 1
     super("#{@line_number}: #{line}")
