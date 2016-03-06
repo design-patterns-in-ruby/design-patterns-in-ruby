@@ -1,6 +1,6 @@
-require_relative "abstract_factory"
-require_relative "rectangle"
-require_relative "blue"
+require_relative 'abstract_factory'
+require_relative 'rectangle'
+require_relative 'blue'
 
 class BlueRectangleFactory < AbstractFactory
   def get_shape

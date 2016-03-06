@@ -4,6 +4,6 @@ class FrostTask < Task
   end
 
   def time_required
-    3   # 3 minutes
+    3 # 3 minutes
   end
 end

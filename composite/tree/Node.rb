@@ -12,7 +12,7 @@ class Node
     node.parent = self
   end
 
-  alias :<< :add_child
+  alias << add_child
 
   def remove_child(node)
     @children.delete node

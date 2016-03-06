@@ -4,6 +4,6 @@ class MixTask < Task
   end
 
   def time_required
-    3     # Mix for 3 minutes
+    3 # Mix for 3 minutes
   end
 end

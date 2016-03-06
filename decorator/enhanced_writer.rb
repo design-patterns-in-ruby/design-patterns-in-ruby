@@ -6,7 +6,7 @@ class EnhancedWriter
     @check_sum = 0
     @line_number = 1
   end
-  
+
   def write_line(line)
     @file.print(line)
     @file.print("\n")

@@ -5,7 +5,7 @@ class ComputerBuilder
     @computer = Computer.new
   end
 
-  def turbo(has_turbo_cpu=true)
+  def turbo(_has_turbo_cpu = true)
     @computer.motherboard.cpu = TurboCPU.new
   end
 
@@ -17,11 +17,11 @@ class ComputerBuilder
     @computer.motherboard.memory_size = size_in_mb
   end
 
-  def add_cd(writable=false)
+  def add_cd(writable = false)
     @computer.drives << Drive.new(:cd, 760, writable)
   end
 
-  def add_dvd(writable=false)
+  def add_dvd(writable = false)
     @computer.drives << Drive.new(:dvd, 4700, writable)
   end
 
@@ -30,20 +30,20 @@ class ComputerBuilder
   end
 
   def method_missing(name, *args)
-    words = name.to_s.split("_")
-    return super(name, *args) unless words.shift == "add"
+    words = name.to_s.split('_')
+    return super(name, *args) unless words.shift == 'add'
     words.each do |word|
-      next if word == "and"
-      add_cd if word == "cd"
-      add_dvd if word == "dvd"
-      add_hard_disk(100000) if word == "harddisk"
-      turbo if word == "turbo"
+      next if word == 'and'
+      add_cd if word == 'cd'
+      add_dvd if word == 'dvd'
+      add_hard_disk(100_000) if word == 'harddisk'
+      turbo if word == 'turbo'
     end
   end
 
   def computer
-    raise "Not enough memory." if @computer.motherboard.memory_size < 250
-    raise "Too many drives." if @computer.drives.size > 4
+    raise 'Not enough memory.' if @computer.motherboard.memory_size < 250
+    raise 'Too many drives.' if @computer.drives.size > 4
     @computer
   end
 end

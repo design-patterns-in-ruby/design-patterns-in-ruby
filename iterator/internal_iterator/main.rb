@@ -9,7 +9,6 @@
 #   puts "The element is #{element}"
 # }
 
-a = ['joe', 'sam', 'george']
+a = %w(joe sam george)
 # the 'all' method is provided to Array by the Enumerable module
 puts a.all? { |element| element.length < 4 }
-

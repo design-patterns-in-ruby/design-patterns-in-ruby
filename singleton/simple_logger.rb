@@ -16,11 +16,11 @@ class SimpleLogger
 
   ## the Singleton module overrides the following code
   # @@instance = self.new
-  # 
+  #
   # def self.instance
   #   @@instance
   # end
-  # 
+  #
   # private_class_method :new
 
   def error(msg)

@@ -8,7 +8,7 @@ class Portfolio
   def each(&block)
     @accounts.each(&block)
   end
-  
+
   def add_account(account)
     @accounts << account
   end

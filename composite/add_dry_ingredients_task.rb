@@ -4,6 +4,6 @@ class AddDryIngredientsTask < Task
   end
 
   def time_required
-    1     # 1 minute to add flour and sugar
+    1 # 1 minute to add flour and sugar
   end
 end

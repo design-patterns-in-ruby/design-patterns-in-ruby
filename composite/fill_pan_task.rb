@@ -4,6 +4,6 @@ class FillPanTask < Task
   end
 
   def time_required
-    2.5   # 3 minutes
+    2.5 # 3 minutes
   end
 end

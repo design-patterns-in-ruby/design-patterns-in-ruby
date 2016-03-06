@@ -1,5 +1,5 @@
-require_relative "expression"
-require_relative "all"
+require_relative 'expression'
+require_relative 'all'
 
 class Not < Expression
   def initialize(expression)

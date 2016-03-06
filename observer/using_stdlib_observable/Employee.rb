@@ -14,8 +14,8 @@ class Employee
   end
 
   def salary=(new_salary)
-    changed     # Sets boolean flag that object has changed to true
+    changed # Sets boolean flag that object has changed to true
     @salary = new_salary
-    notify_observers(self)  # Sets changed = false
+    notify_observers(self) # Sets changed = false
   end
 end
