@@ -6,5 +6,10 @@ class Command
   end
 
   def execute
+    raise NotImplementedError
+  end
+
+  def unexecute
+    raise NotImplementedError
   end
 end
