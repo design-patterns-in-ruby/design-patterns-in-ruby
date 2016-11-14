@@ -11,6 +11,7 @@ This book covers 14 of the original 23 GoF design patterns.
 * [Composite](#composite)
 * [Iterator](#iterator)
 * [Commands](#commands)
+* [Mediator](#mediator)
 * [Adapter](#adapter)
 * [Proxy](#proxy)
 * [Decorator](#decorator)
@@ -188,6 +189,14 @@ When installing applications, many will prompt the user with a number of install
 
 ###### Fixed Overhead
 In some situations there is a fixed overhead to executing a certain type of command.  Queuing up multiple commands and executing them together reduces the number of times we have to run the overhead code.  Database operations are an example of this.  If there isn't a persistent database connection, we have to create one each time we run database operations.  Since there is a cost to connecting to the database, a good approach may be to queue up the database operations and execute them in a batch.  The same logic holds for web applications when you need to make API calls to external applications.
+
+
+### MEDIATOR
+The Mediator pattern promotes a "many-to-many relationship network" to "full object status". Modelling the inter-relationships with an object enhances encapsulation, and allows the behavior of those inter-relationships to be modified or extended through subclassing.
+
+The Mediator defines the interface for communication between Colleague objects. The ConcreteMediator implements the Mediator interface and coordinates communication between Colleague objects. It is aware of all the Colleagues and their purpose with regards to inter communication.The ConcreteColleague communicates with other colleagues through the mediator.
+
+Without this pattern, all of the Colleagues would know about each other, leading to high coupling. By having all colleagues communicate through one central point we have a decoupled system while maintaining control on the object's interactions.
 
 ---
 ### ADAPTER
