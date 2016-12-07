@@ -39,6 +39,7 @@ This book covers 14 of the original 23 GoF design patterns.
     * increases modularity, implementations can be easily swapped
 
 4. delegate, delegate, delegate
+  
   Let other classes handle functionality within their domain
 
 5. You ain't gonna need it (Russ Olsen's addition)
