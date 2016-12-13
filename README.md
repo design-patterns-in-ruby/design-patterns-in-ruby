@@ -369,3 +369,41 @@ We continue by building our builder ComputerBuilder which will simplify the way 
 Finally, in our client application we instantiate an object of ComputerBuilder and we call the aforementioned methods on the builder to build our custom computer object during run-time.
 
 Note that we also make use of magic methods to rapidly build our computer object. As per the book we have overridden the method_missing() method to parse the method name and rapidly construct the object we need.
+
+---
+
+### Interpreter
+
+The Interpreter Pattern specifies how to evaluate(interpret) expressions in a language. The basic idea is to have a class for each symbol that may occur in expression. If we instantiate these classes and connect the objects together they will form a syntax tree of the language.
+
+#### Uses
+
+This design pattern is good at solving contained, well-bounded problems. Some characteristic uses of the interpreter design pattern are: 
+
+* Pattern matching languages such as regular expressions
+* Query languages such as SQL
+* Configuration languages(e.g. languages describing communication protocols).
+
+#### Implementation
+
+The book presents an interesting case of the pattern where we want to find files by name, size and more complex searches. The pattern implementation can be split in three parts the class definitions, the parser development and the expression evaluation. 
+
+##### Class definitions
+
+Lets consider the book example, where we have the following symbols:
+
+1) '|' -> Or Class
+
+2) '&' -> And Class
+
+For each symbol-token above we create a class, that is responsible for interpreting it's part of the expression.
+
+After we define and implement our classes we need a parser. The parser will read the input and produce an Abstract Syntax Tree or AST. The nodes of the tree are the instantiated objects of our classes. 
+
+##### Parser
+
+The produced AST is an object representation of our file finding expression. Each node of the tree is either terminal(objects that won't be broken down any further) or nonterminal(more abstract objects). 
+
+##### Expression evaluation
+
+This is basically the evaluation of the AST that was build by the parser. The nodes of the tree are evaluated against specific conditions we set.
