@@ -1,6 +1,6 @@
 require_relative 'report'
-require_relative 'html_formatter'
-require_relative 'plain_text_formatter'
+require_relative 'HTML_FORMATTER'
+require_relative 'PLAIN_TEXT_FORMATTER'
 
 report = Report.new(&HTML_FORMATTER)
 report.output_report
