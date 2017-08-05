@@ -3,12 +3,12 @@ require_relative 'rectangle'
 require_relative 'square'
 
 class ShapeFactory
-  # use getShape method to get object of type shape
+  # Use getShape method to get object of type shape.
   def get_shape(type)
     case type
-    when 'CIRCLE'    then Circle.new
-    when 'RECTANGLE' then Rectangle.new
-    when 'SQUARE'    then Square.new
+    when 'Circle'    then Circle.new
+    when 'Rectangle' then Rectangle.new
+    when 'Square'    then Square.new
     end
   end
 end
