@@ -3,7 +3,7 @@ updated to work with **ruby 2.2.0**
 
 Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
-This book covers 14 of the original 23 GoF design patterns.
+This book covers 15 of the original 23 GoF design patterns.
 
 * [Template Method](#template-method)
 * [Strategy](#strategy)
