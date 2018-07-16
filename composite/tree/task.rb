@@ -8,9 +8,7 @@ class Task < Node
     if leaf?
       @time_required
     else
-      time = 0.0
-      children.each { |child_task| time += child_task.time_required }
-      time
+      children.reduce(0.0) { |time, task| time += task.time_required }
     end
   end
 end
