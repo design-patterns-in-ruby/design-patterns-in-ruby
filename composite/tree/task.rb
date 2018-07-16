@@ -8,7 +8,7 @@ class Task < Node
     if leaf?
       @time_required
     else
-      children.inject(0.0) { |time, task| time += task.time_required }
+      children.reduce(0.0) { |time, task| time += task.time_required }
     end
   end
 end
