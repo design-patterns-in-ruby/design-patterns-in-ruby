@@ -28,6 +28,6 @@ class CompositeTask < Task
   end
 
   def time_required
-    @sub_tasks.inject(0.0) { |time, task| time += task.time_required }
+    @sub_tasks.reduce(0.0) { |time, task| time += task.time_required }
   end
 end
