@@ -1,0 +1,1 @@
+Test of encrypting data from a txt file

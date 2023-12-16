@@ -1,0 +1,3 @@
+Info: Computer wins chess game.
+Warning: AE-35 hardware failure predicted.
+Error: HAL-9000 malfunction, take emergency action!
