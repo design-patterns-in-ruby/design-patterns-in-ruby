@@ -413,9 +413,9 @@ The book presents an interesting case of the pattern where we want to find files
 
 Lets consider the book example, where we have the following symbols:
 
-1) '|' -> Or Class
+1) `|` -> Or Class
 
-2) '&' -> And Class
+2) `&` -> And Class
 
 For each symbol-token above we create a class, that is responsible for interpreting it's part of the expression.
 
