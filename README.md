@@ -1,5 +1,8 @@
 # Design Patterns in Ruby
-updated to work with **ruby 2.2.0**
+
+Updated to work with **ruby 2.2.0**
+
+Contributions welcome :). Please submit issues or pull requests.
 
 Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
