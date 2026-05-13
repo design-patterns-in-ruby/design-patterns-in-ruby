@@ -1,5 +1,6 @@
 # Design Patterns in Ruby
-updated to work with **ruby 2.2.0**
+
+Updated to work with **ruby 2.2.0**
 
 Examples from the book **Design Patterns in Ruby** by *Russ Olsen*
 
@@ -59,7 +60,7 @@ This book covers 14 of the original 23 GoF design patterns.
 
 Disadvantages:
 
-  * no runtime flexibility
+- no runtime flexibility
 
 ---
 ### STRATEGY
@@ -77,8 +78,8 @@ If the strategies are very simple and have only one method, we can even use code
 
 Advantages:
 
-* algorithms are interchangable at runtime
-* promotes modularity
+- algorithms are interchangable at runtime
+- promotes modularity
 
 ---
 ### OBSERVER
@@ -318,8 +319,8 @@ As an alternative, it is possible to use global variables to store singletons. T
 
 Disadvantages:
 
-* Global variables can be reassigned at any time.
-* Lazy instantiation isn't possible.
+- Global variables can be reassigned at any time.
+- Lazy instantiation isn't possible.
 
 ##### Constants
 
@@ -327,19 +328,19 @@ Since we can use global variables to hold singletons, it follows that we can als
 
 Disadvantages:
 
-* Constant variables can be reassigned at any time. A warning is returned when they are changed but they are still changed.
-* Lazy instantiation isn't possible.
-* We can't prevent the creation of more than one instance of the singleton class.
+- Constant variables can be reassigned at any time. A warning is returned when they are changed but they are still changed.
+- Lazy instantiation isn't possible.
+- We can't prevent the creation of more than one instance of the singleton class.
 
 ##### Classes as Singletons
 
 Disadvantages:
 
-* Using a class to hold all the variables and methods doesn't follow traditional coding conventions.
+- Using a class to hold all the variables and methods doesn't follow traditional coding conventions.
 
 Advantages:
 
-* There can be only one class of a given name and therefore only one instance of the singleton.
+- There can be only one class of a given name and therefore only one instance of the singleton.
 
 ##### Modules as Singletons
 
@@ -392,7 +393,6 @@ Finally, in our client application we instantiate an object of ComputerBuilder a
 Note that we also make use of magic methods to rapidly build our computer object. As per the book we have overridden the method_missing() method to parse the method name and rapidly construct the object we need.
 
 ---
-
 ### Interpreter
 
 The Interpreter Pattern specifies how to evaluate(interpret) expressions in a language. The basic idea is to have a class for each symbol that may occur in expression. If we instantiate these classes and connect the objects together they will form a syntax tree of the language.
@@ -401,9 +401,9 @@ The Interpreter Pattern specifies how to evaluate(interpret) expressions in a la
 
 This design pattern is good at solving contained, well-bounded problems. Some characteristic uses of the interpreter design pattern are: 
 
-* Pattern matching languages such as regular expressions
-* Query languages such as SQL
-* Configuration languages(e.g. languages describing communication protocols).
+- Pattern matching languages such as regular expressions
+- Query languages such as SQL
+- Configuration languages (e.g. languages describing communication protocols)
 
 #### Implementation
 
@@ -413,9 +413,9 @@ The book presents an interesting case of the pattern where we want to find files
 
 Lets consider the book example, where we have the following symbols:
 
-1) `|` -> Or Class
+1) `|` -> OR Class
 
-2) `&` -> And Class
+2) `&` -> AND Class
 
 For each symbol-token above we create a class, that is responsible for interpreting it's part of the expression.
 
